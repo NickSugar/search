@@ -11,6 +11,35 @@
 
 	<div ng-controller="tripCtrl">
 		
+        Position
+		<form ng-model="position">
+            <input type="radio" name="position" value="FA" checked>FA<br>
+            <input type="radio" name="position" value="FB">FB<br>
+            <input type="radio" name="position" value="FC">FC<br>
+            <input type="radio" name="position" value="FD">FD<br>
+            <input type="radio" name="position" value="FE">FE<br>
+            <input type="radio" name="position" value="FF">FF
+        </form><br>
+
+        <!--Bonus
+        <form ng-model="bonus">
+            Minimum Bonus (between 0 and 200):
+            <input type="number" name="bonus" min="0" max="200">
+        </form><br>-->
+
+        Base
+        <form ng-model="base">
+            <select>
+                <option value="SEA">SEA</option>
+                <option value="ANC">ANC</option>
+                <option value="PDX">PDX</option>
+                <option value="LAX">LAX</option>
+                <option value="SAN">SAN</option>
+            </select>
+        </form><br>
+
+        <a href="details.html"><button type="button" ng-click="search()">Search Trips</button></a>
+
 	</div>
 
 </body>

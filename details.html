@@ -1,5 +1,34 @@
-<ion-view view-title="Trip Matches">
-  <ion-content>
-  
-  </ion-content>
-</ion-view>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="ctrl.js"></script>
+
+</head>
+<body ng-app="App">
+
+	<div ng-controller="tripCtrl">
+		
+		<ul ng-repeat="trip in trips">
+			<li>{{trip.base}}</li>
+			<li>{{trip.dates}}</li>
+			<li>{{trip.tripType}}</li>
+			<li>{{trip.reportTime}}</li>
+			<li>{{trip.releaseTime}}</li>
+			<li>{{trip.destination}}</li>
+			<li>{{trip.layoverLength}}</li>
+			<li>{{trip.position}}</li>
+			<li>{{trip.tfp}}</li>
+			<li>{{trip.bonus}}</li>
+			<li>{{trip.days}}</li>
+			<li>{{trip.postedBy}}</li>
+			<li>{{trip.comment}}</li>
+		</ul>
+
+	</div>
+
+</body>
+</html>

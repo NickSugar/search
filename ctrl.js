@@ -1,6 +1,10 @@
 angular.module('App').controller('tripCtrl', function($scope){
 
 	console.log('test');
+
+    $scope.search = function() {
+        
+    }
 	
 	$scope.trips = [
         {
@@ -13,7 +17,7 @@ angular.module('App').controller('tripCtrl', function($scope){
             layoverLength:'1829',//First two numbers are the hours and the second two are minutes
             position:'FA',//FA, FB, FC, FD, FE and FF
             tfp:'12.4',//Paid hours
-            bonus:'',//$$$
+            bonus:'0',//$$$
             days:'2',
             postedBy:'',
             comment:''
