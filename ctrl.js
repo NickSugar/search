@@ -1,6 +1,6 @@
 angular.module('App').controller('tripCtrl', function($scope){
 
-	console.log('test');
+	//console.log('test');
 
     $scope.search = function() {
         

@@ -11,8 +11,11 @@
 <body ng-app="App">
 
 	<div ng-controller="tripCtrl">
+
+		<h1>{{position}}</h1>
+        <h1>{{base}}</h1>
 		
-		<ul ng-repeat="trip in trips">
+		<ul ng-repeat="trip in trips | filter:position | filter:base">
 			<li>{{trip.base}}</li>
 			<li>{{trip.dates}}</li>
 			<li>{{trip.tripType}}</li>
