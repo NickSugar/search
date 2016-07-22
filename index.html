@@ -35,26 +35,26 @@
                 <option value="SAN">SAN</option>
             </select><br><br>
 
-        <a href="details.html"><button type="button" ng-click="search()">Search Trips</button></a><br>
+        <button type="button" ng-click="search()">Search Trips</button><br>
         </form>
 
         <h1>{{position}}</h1>
         <h1>{{base}}</h1><br>
 
-        <ul ng-repeat="trip in trips | filter:position | filter:base">
-			<li>{{trip.base}}</li>
-			<li>{{trip.dates}}</li>
-			<li>{{trip.tripType}}</li>
-			<li>{{trip.reportTime}}</li>
-			<li>{{trip.releaseTime}}</li>
-			<li>{{trip.destination}}</li>
-			<li>{{trip.layoverLength}}</li>
-			<li>{{trip.position}}</li>
-			<li>{{trip.tfp}}</li>
-			<li>{{trip.bonus}}</li>
-			<li>{{trip.days}}</li>
-			<li>{{trip.postedBy}}</li>
-			<li>{{trip.comment}}</li>
+        <ul ng-repeat="result in results">
+			<li>{{result.base}}</li>
+			<li>{{result.dates}}</li>
+			<li>{{result.tripType}}</li>
+			<li>{{result.reportTime}}</li>
+			<li>{{result.releaseTime}}</li>
+			<li>{{result.destination}}</li>
+			<li>{{result.layoverLength}}</li>
+			<li>{{result.position}}</li>
+			<li>{{result.tfp}}</li>
+			<li>{{result.bonus}}</li>
+			<li>{{result.days}}</li>
+			<li>{{result.postedBy}}</li>
+			<li>{{result.comment}}</li>
 		</ul>
 
 	</div>

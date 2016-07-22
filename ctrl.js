@@ -3,7 +3,21 @@ angular.module('App').controller('tripCtrl', function($scope){
 	//console.log('test');
 
     $scope.search = function() {
-        
+        $scope.results = [];
+
+        function filter1(this) {
+            if (this==$scope.base) {
+                if (this==$scope.position) {
+                    $scope.results.push($scope.trips[i]);
+                } else {return;}
+            } else {return;}
+        }
+
+        for(var i = 0; i<$scope.trips.length; i++){
+
+            $scope.trips[i].forEach(filter1);
+        }
+        console.log($scope.results);
     }
 	
 	$scope.trips = [
