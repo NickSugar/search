@@ -20,11 +20,12 @@
             <input type="radio" ng-model="position" value="FE">FE<br>
             <input type="radio" ng-model="position" value="FF">FF<br><br>
 
-        <!--Bonus
-        <form ng-model="bonus">
-            Minimum Bonus (between 0 and 200):
-            <input type="number" name="bonus" min="0" max="200">
-        </form><br>-->
+        Bonus
+        <form >
+            (between 0 and 200):
+            <input ng-model="bonusMin" type="number" name="bonusMin" min="0" max="200">
+            <input ng-model="bonusMax" type="number" name="bonusMax" min="0" max="200">
+        </form><br>
 
         Base
             <select ng-model="base">
@@ -38,23 +39,20 @@
         <button type="button" ng-click="search()">Search Trips</button><br>
         </form>
 
-        <h1>{{position}}</h1>
-        <h1>{{base}}</h1><br>
-
-        <ul ng-repeat="result in results">
-			<li>{{result.base}}</li>
-			<li>{{result.dates}}</li>
-			<li>{{result.tripType}}</li>
-			<li>{{result.reportTime}}</li>
-			<li>{{result.releaseTime}}</li>
-			<li>{{result.destination}}</li>
-			<li>{{result.layoverLength}}</li>
-			<li>{{result.position}}</li>
-			<li>{{result.tfp}}</li>
-			<li>{{result.bonus}}</li>
-			<li>{{result.days}}</li>
-			<li>{{result.postedBy}}</li>
-			<li>{{result.comment}}</li>
+        <ul ng-repeat="result in results">        	
+			<li>Base--{{result.base}}</li>			
+			<li>Dates--{{result.dates}}</li>
+			<li>Trip Type--{{result.tripType}}</li>
+			<li>Report Time--{{result.reportTime}}</li>
+			<li>Release Time--{{result.releaseTime}}</li>
+			<li>Destination--{{result.destination}}</li>
+			<li>Layover Lenght--{{result.layoverLength}}</li>
+			<li>Position--{{result.position}}</li>
+			<li>TFP--{{result.tfp}}</li>
+			<li>$Bonus$--{{result.bonus}}</li>
+			<li>Days--{{result.days}}</li>
+			<li>Posted by--{{result.postedBy}}</li>
+			<li>Comment--{{result.comment}}</li>
 		</ul>
 
 	</div>

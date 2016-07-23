@@ -1,26 +1,28 @@
 angular.module('App').controller('tripCtrl', function($scope){
 
-	//console.log('test');
+$scope.position="FA";
+$scope.bonusMin=0;
+$scope.bonusMax=200;
+$scope.base="SEA";
 
     $scope.search = function() {
-        $scope.results = [];
+        $scope.results = trips.filter(function(trip) {
 
-        function filter1(this) {
-            if (this==$scope.base) {
-                if (this==$scope.position) {
-                    $scope.results.push($scope.trips[i]);
+            if (trip.base===$scope.base) {
+                if (trip.position===$scope.position) {
+                	if ((trip.bonus>=$scope.bonusMin)&&(trip.bonus<=$scope.bonusMax))  {                                     
+                    	return true; 
+                        } else {return;}
                 } else {return;}
             } else {return;}
-        }
-
-        for(var i = 0; i<$scope.trips.length; i++){
-
-            $scope.trips[i].forEach(filter1);
-        }
-        console.log($scope.results);
+        })
+        $scope.position="FA";
+        $scope.bonusMin=0;
+        $scope.bonusMax=200;
+        $scope.base="SEA";
     }
 	
-	$scope.trips = [
+	var trips = [
         {
             base: 'SEA',//SEA, ANC, PDX, LAX and SAN
             dates: '01Jul16 - 02Jul16',
@@ -31,7 +33,7 @@ angular.module('App').controller('tripCtrl', function($scope){
             layoverLength:'1829',//First two numbers are the hours and the second two are minutes
             position:'FA',//FA, FB, FC, FD, FE and FF
             tfp:'12.4',//Paid hours
-            bonus:'0',//$$$
+            bonus: 100,//$$$
             days:'2',
             postedBy:'',
             comment:''
@@ -46,7 +48,7 @@ angular.module('App').controller('tripCtrl', function($scope){
             layoverLength:'18/9/1150',
             position:'FB',
             tfp:'4.6',
-            bonus:'100',
+            bonus:100,
             days:'2',
             postedBy:'RioJane',
             comment:'Come alone or the deal is off!!!'
@@ -61,7 +63,7 @@ angular.module('App').controller('tripCtrl', function($scope){
             layoverLength:'9',
             position:'FA',
             tfp:'8.5',
-            bonus:'0',
+            bonus:0,
             days:'2',
             postedBy:'Jon',
             comment:'Hot lanta!'
@@ -76,7 +78,7 @@ angular.module('App').controller('tripCtrl', function($scope){
             layoverLength:'18/10',
             position:'FC',
             tfp:'14',
-            bonus:'150',
+            bonus:150,
             days:'3',
             postedBy:'Rob',
             comment:'burrr'
@@ -91,7 +93,7 @@ angular.module('App').controller('tripCtrl', function($scope){
             layoverLength:'0',
             position:'FB',
             tfp:'5.0',
-            bonus:'0',
+            bonus:0,
             days:'1',
             postedBy:'Hari',
             comment:'Cali'
@@ -106,7 +108,7 @@ angular.module('App').controller('tripCtrl', function($scope){
             layoverLength:'',
             position:'',
             tfp:'5',
-            bonus:'50',
+            bonus:50,
             days:'1',
             postedBy:'Rio',
             comment:'Lame'
@@ -121,7 +123,7 @@ angular.module('App').controller('tripCtrl', function($scope){
             layoverLength:'',
             position:'',
             tfp:'5',
-            bonus:'0',
+            bonus:0,
             days:'1',
             postedBy:'Gary',
             comment:'Noooooooo'
@@ -136,7 +138,7 @@ angular.module('App').controller('tripCtrl', function($scope){
             layoverLength:'',
             position:'',
             tfp:'5',
-            bonus:'75',
+            bonus:75,
             days:'1',
             postedBy:'Bob',
             comment:''
@@ -151,7 +153,7 @@ angular.module('App').controller('tripCtrl', function($scope){
             layoverLength:'10/24/9',
             position:'FD',
             tfp:'',
-            bonus:'150',
+            bonus:150,
             days:'4',
             postedBy:'Jay',
             comment:'Looooong'
@@ -166,7 +168,7 @@ angular.module('App').controller('tripCtrl', function($scope){
             layoverLength:'0',
             position:'FC',
             tfp:'5.5',
-            bonus:'200',
+            bonus:200,
             days:'1',
             postedBy:'Kim',
             comment:'Day trip'
@@ -181,7 +183,7 @@ angular.module('App').controller('tripCtrl', function($scope){
             layoverLength:'',
             position:'',
             tfp:'5',
-            bonus:'20',
+            bonus:20,
             days:'1',
             postedBy:'Timmy',
             comment:'Good times'
