@@ -16,10 +16,11 @@ $scope.base="SEA";
                 } else {return;}
             } else {return;}
         })
+        /* Sets search options back to originals.
         $scope.position="FA";
         $scope.bonusMin=0;
         $scope.bonusMax=200;
-        $scope.base="SEA";
+        $scope.base="SEA";*/
     }
 	
 	var trips = [
